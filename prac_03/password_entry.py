@@ -3,9 +3,11 @@ Katrina McKeough
 """
 
 
+MIN_PASSWORD_LENGTH = 4
+
+
 def main():
-    min_password_length = 4
-    password = get_password(min_password_length)
+    password = get_password(MIN_PASSWORD_LENGTH)
     print_asterisks(password)
 
 
