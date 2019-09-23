@@ -1,3 +1,6 @@
+CURRENT_YEAR = 2019
+
+
 class Guitar:
     """Represent a Guitar object."""
 
@@ -14,3 +17,6 @@ class Guitar:
 
     def __str__(self):
         return "{} ({}) : ${:,.2f}".format(self.name, self.year, self.cost)
+
+    def get_age(self):
+        return CURRENT_YEAR - self.year
