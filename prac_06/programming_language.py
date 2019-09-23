@@ -1,9 +1,7 @@
-
 class ProgrammingLanguage:
     """Represent a ProgrammingLanguage object."""
 
     def __init__(self, name, typing, reflection, year):
-
         """Initialise a ProgrammingLanguage instance.
 
         name: string
@@ -18,3 +16,8 @@ class ProgrammingLanguage:
 
     def is_dynamic(self):
         return self.typing == "Dynamic"
+
+    def __str__(self):
+        """Convert the instance to a string."""
+        return "{}, {} Typing, Reflection={}, First appeared in {}".format(self.name, self.typing, self.reflection,
+                                                                            self.year)
