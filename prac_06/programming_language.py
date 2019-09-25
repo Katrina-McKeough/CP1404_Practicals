@@ -14,10 +14,10 @@ class ProgrammingLanguage:
         self.reflection = reflection
         self.year = year
 
-    def is_dynamic(self):
-        return self.typing == "Dynamic"
-
     def __str__(self):
         """Convert the instance to a string."""
         return "{}, {} Typing, Reflection={}, First appeared in {}".format(self.name, self.typing, self.reflection,
                                                                            self.year)
+
+    def is_dynamic(self):
+        return self.typing == "Dynamic"
