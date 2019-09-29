@@ -18,7 +18,9 @@ BoxLayout:
     Button:
         text: 'Convert m to km'
         font_size: 50
-        font_size: 50
+        on_press: app.handle_calculate(float(input_miles.text))
+#       Ask Lindsay: acceptable to convert text to float here? Or define a separate method to do that?
     Label:
         text: ''
+        font_size: 80
         id: output_km
