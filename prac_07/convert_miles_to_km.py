@@ -20,8 +20,11 @@ class ConvertMilesApp(App):
 
     def convert_str_to_float(self, text):
         """ convert string to float """
-        value = float(text)
-        return value
+        try:
+            value = float(text)
+            return value
+        except ValueError:
+            return 0
 
     def handle_calculate(self, value):
         """ handle calculation from button press, output result to label widget """
