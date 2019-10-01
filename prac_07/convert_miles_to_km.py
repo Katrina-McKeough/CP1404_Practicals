@@ -18,10 +18,20 @@ class ConvertMilesApp(App):
         self.root = Builder.load_file('convert_miles_to_km.kv')
         return self.root
 
+    def convert_str_to_float(self, text):
+        """ convert string to float """
+        value = float(text)
+        return value
+
     def handle_calculate(self, value):
-        """ handle calculation from button press, output result to label widget"""
-        result = value * MILES_TO_KM_CONVERSION
+        """ handle calculation from button press, output result to label widget """
+        result = self.convert_str_to_float(value) * MILES_TO_KM_CONVERSION
         self.output_text = str(result)
+
+    def handle_increment(self, increment):
+        """ handle updating input miles text from up/down button press """
+        result = self.convert_str_to_float(self.root.ids.input_miles.text) + increment
+        self.root.ids.input_miles.text = str(result)
 
 
 ConvertMilesApp().run()
