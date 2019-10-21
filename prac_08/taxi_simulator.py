@@ -29,13 +29,13 @@ def main():
                 chosen_taxi.drive(drive_distance)
                 current_trip_cost = chosen_taxi.get_fare()
                 total_cost += current_trip_cost
-                print("Your {} trip cost you ${:2f}".format(chosen_taxi.name, current_trip_cost))
+                print("Your {} trip cost you ${:.2f}".format(chosen_taxi.name, current_trip_cost))
         else:
             print("Invalid option")
-        print("Bill to date: ${:2f}".format(total_cost))
+        print("Bill to date: ${:.2f}".format(total_cost))
         print(MENU)
         choice = input(">>> ").lower()
-    print("Total trip cost: ${:2f}".format(total_cost))
+    print("Total trip cost: ${:.2f}".format(total_cost))
     print("Taxis are now:")
     display_taxis(taxis)
 
