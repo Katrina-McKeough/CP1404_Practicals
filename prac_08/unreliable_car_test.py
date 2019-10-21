@@ -1,8 +1,16 @@
 from prac_08.unreliable_car import UnreliableCar
 
-new_unreliable_car = UnreliableCar("Toyota Hilux (2007)", 100, 24.7)
-print(new_unreliable_car)
-print("Reliability is: {}".format(new_unreliable_car.reliability))
-new_unreliable_car.drive(40)
-print("After attempting to drive 40km:")
-print(new_unreliable_car)
+UPPER_ATTEMPT_LIMIT = 21
+bad_car = UnreliableCar("Toyota Hilux (2007)", 100, 12.34)
+decent_car = UnreliableCar("Kia Cerato (2017)", 100, 88.88)
+print("{}, reliability of {}".format(bad_car, bad_car.reliability))
+print("{}, reliability of {}".format(decent_car, decent_car.reliability))
+
+for i in range(1, UPPER_ATTEMPT_LIMIT):
+    print("Attempt {} of driving 5km".format(i))
+    print("{} drove {}km".format(bad_car.name, bad_car.drive(5)))
+    print("{} drove {}km".format(decent_car.name, decent_car.drive(5)))
+
+print("After drive attempts:")
+print(bad_car)
+print(decent_car)
