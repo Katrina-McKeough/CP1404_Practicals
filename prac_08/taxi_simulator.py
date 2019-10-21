@@ -5,6 +5,10 @@ Taxi simulator program
 from prac_08.taxi import Taxi
 from prac_08.silver_service_taxi import SilverServiceTaxi
 
+# Questions for Lindsay: order of rounding? Previous test example had expected fare of $48.80, implies rounding AFTER
+# price_per_km multiplied by trip distance. Example output for this program has rounded price_per_km values (BEFORE
+# multiplied by trip distance), will make a big difference in final fare.
+
 MENU = "q)uit, c)hoose taxi, d)rive"
 
 
