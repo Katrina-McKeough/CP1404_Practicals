@@ -12,8 +12,7 @@ class UnreliableCar(Car):
 
     def drive(self, distance):
         """Drive like parent Car but only if reliability permits."""
-        if uniform(1, 100) < self.reliability:
-            distance_driven = super().drive(distance)
-        else:
-            distance_driven = super().drive(0)
+        if uniform(1, 100) >= self.reliability:
+            distance = 0
+        distance_driven = super().drive(distance)
         return distance_driven
