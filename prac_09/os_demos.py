@@ -31,7 +31,6 @@ def main():
         new_name = get_fixed_filename(filename)
         print("Renaming {} to {}".format(filename, new_name))
 
-        # TODO: Try these options one at a time
         # Option 1: rename file to new name - in place
         # os.rename(filename, new_name)
 
@@ -54,8 +53,11 @@ def demo_walk():
         print("\tand files:", filenames)
         print("(Current working directory is: {})".format(os.getcwd()))
 
-        # TODO: add a loop to rename the files
+        for filename in filenames:
+            filename_with_path = os.path.join(directory_name, filename)
+            new_filename_with_path = os.path.join(directory_name, get_fixed_filename(filename))
+            os.rename(filename_with_path, new_filename_with_path)
 
 
-main()
-# demo_walk()
+# main()
+demo_walk()
