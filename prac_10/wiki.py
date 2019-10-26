@@ -1,3 +1,8 @@
+"""
+CP1404/CP5632 Practical 10
+Print the title, summary and URL of a Wikipedia page from user input.
+"""
+
 import wikipedia
 
 summary = ""
