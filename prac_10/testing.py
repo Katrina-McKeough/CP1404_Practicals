@@ -22,7 +22,7 @@ def is_long_word(word, length=5):
     >>> is_long_word("Python", 6)
     True
     """
-    return len(word) > length
+    return len(word) >= length
 
 
 def run_tests():
@@ -45,21 +45,27 @@ def run_tests():
     assert test_car.fuel == 10, "Car does not set passed in fuel correctly"
 
 
+def format_phrase_as_sentence(phrase=''):
+    """
+    Format a phrase as a sentence, starting with a capital and ending with a single full stop. 
+    >>> format_phrase('hello')
+    'Hello.'
+    >>> format_phrase('It is an ex parrot.')
+    'It is an ex parrot.'
+    >>> format_phrase('i need to watch V for Vendetta.')
+    'I need to watch V for Vendetta.'
+    """
+
+    sentence = ""
+    for i, letter in enumerate(phrase):
+        if i == 0:
+            letter = letter.capitalize()
+        sentence += letter
+    if not sentence[-1] == ".":
+        sentence += "."
+    return sentence
+
+
 run_tests()
 
-# TODO: 3. Uncomment the following line and run the doctests
-# (PyCharm may see your >>> doctest comments and run doctests anyway.)
-# doctest.testmod()
-
-# TODO: 4. Fix the failing is_long_word function
-# (don't change the tests, change the function!)
-
-# TODO: 5. Write and test a function to format a phrase as a sentence,
-# starting with a capital and ending with a single full stop.
-# Important: start with a function header and just use pass as the body
-# then add doctests for 3 tests:
-# 'hello' -> 'Hello.'
-# 'It is an ex parrot.' -> 'It is an ex parrot.'
-# and one more you decide (one that is valid!)
-# test this and watch the tests fail
-# then write the body of the function so that the tests pass
+doctest.testmod()
