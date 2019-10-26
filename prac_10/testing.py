@@ -48,11 +48,11 @@ def run_tests():
 def format_phrase_as_sentence(phrase=''):
     """
     Format a phrase as a sentence, starting with a capital and ending with a single full stop. 
-    >>> format_phrase('hello')
+    >>> format_phrase_as_sentence('hello')
     'Hello.'
-    >>> format_phrase('It is an ex parrot.')
+    >>> format_phrase_as_sentence('It is an ex parrot.')
     'It is an ex parrot.'
-    >>> format_phrase('i need to watch V for Vendetta.')
+    >>> format_phrase_as_sentence('i need to watch V for Vendetta.')
     'I need to watch V for Vendetta.'
     """
 
