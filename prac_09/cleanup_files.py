@@ -30,22 +30,24 @@ def main():
 def get_fixed_filename(filename):
     """Return a 'fixed' version of filename."""
     name_without_spaces = filename.replace(" ", "_")
-    name_with_correct_extension = name_without_spaces.replace(".TXT", ".txt")
     fixed_name = ""
-    fixed_letter = ""
+    fixed_letters = ""
 
-    for i, letter in enumerate(name_with_correct_extension):
+    for i, letter in enumerate(name_without_spaces):
         try:
-            if letter.islower() and name_with_correct_extension[i + 1].isupper():
+            if letter.islower() and name_without_spaces[i + 1].isupper():
                 print("fix PascalCase")
                 fixed_letters = letter + "_"
-                fixed_name += fixed_letters
+            elif letter.islower() and not name_without_spaces[i - 1].isalpha():
+                print("fix not Title Case")
+                fixed_letters = letter.capitalize()
             else:
-                fixed_name += letter
+                fixed_letters = letter
         except IndexError:
-            fixed_name += letter
-
-    return fixed_name
+            pass
+        fixed_name += fixed_letters
+    fixed_filename = fixed_name.replace(fixed_name[fixed_name.find("."):], ".txt")
+    return fixed_filename
 
 
 main()
